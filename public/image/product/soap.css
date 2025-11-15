@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+font-family: sans-serif,Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.colordiv{
+    width: 100%;
+    height: 20px;
+   background-color: #076570;;
+    color: white;
+    padding-top: 50px;
+    padding-bottom: 70px;
+    font-family: sans-serif;
+
+}
+.colordiv p {
+   font-size: 25px;
+   margin-left: 50px;
+}
+
+.headerimg img{
+    margin-top: 30px;
+   width: 90%;
+    height: 450px;
+   margin-left: 5%;    
+
+}
+
+/* .Categories */
+
+.Categories {
+    margin-top: 30px;
+    margin-left: 65px;
+    color: orangered;
+}
+
+.categoriesdiv{
+    height: 600px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr;
+    margin-top: 20px;
+    
+}
+
+
+
+.categories1{
+    height: 250px;
+    width: 400px;
+    border: 2px solid black;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(250, 157, 230, 0.82) 65%);
+border-radius: 10%;
+    
+}
+
+
+
+.categories1 img {
+    height: 100px;
+    width: 100px;
+    margin-left: 80px;
+   
+
+}
+
+/* trend-shampoo */
+
+.shampoo-trend{
+    height: 150px;
+    width: 100%;
+   background-color:#a3f1fa;
+   padding-left: 80px;
+   padding-top: 40px;
+
+}
+
+.other-shampoo-pic{
+ height: 350px;
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+}
+
+.shampoo-pic{
+   height: 300px;
+  width: 25%;
+  box-shadow: -1px 0 10px #000;
+  margin: 10px ;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.shampoo-pic img{
+   height: 300px;
+  width: 95%;
+}
+
+/* delivey */
+
+.deliverdiv{
+    margin-top: 50px;
+    text-align: center;
+}
+.deliverdiv img{
+    height: 35px;
+    width: auto;
+    margin-left: 80px;
+    margin-top: 20px;
+}
+
+/* feature */
+
+.featurediv{
+    height: 350px;
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+}
+
+.feature1{
+       height: 250px;
+  width: 25%;
+  margin: 15px ;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.feature1 img{
+   height: 100px;
+    width: 100px;
+}
