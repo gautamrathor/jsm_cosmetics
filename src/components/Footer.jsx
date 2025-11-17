@@ -8,7 +8,7 @@ function Footer() {
       <div className="footer-container">
         <div className="footer-section">
           <h3>About JSM</h3>
-          <p>Premium personal care products for your daily needs.</p>
+          <p>Premium personal i care products for your daily needs.</p>
         </div>
         
         <div className="footer-section">
