@@ -1,8 +1,34 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './Home.css'
 
 function Home() {
+
+  // ----------------- CAROUSEL CODE FIXED -----------------
+  const slides = [
+    { id: 1, img: "https://picsum.photos/1200/500?random=1" },
+    { id: 2, img: "https://picsum.photos/1200/500?random=2" },
+    { id: 3, img: "https://picsum.photos/1200/500?random=3" },
+  ];
+
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
+  const nextSlide = () => {
+    setCurrent((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  };
+  // -------------------------------------------------------
+
   const features = [
     {
       icon: '🚚',
@@ -27,30 +53,41 @@ function Home() {
   ]
 
   const categories = [
-    {
-      title: 'Soaps',
-      description: 'Natural and medicated soaps for all skin types',
-      link: '/soaps'
-    },
-    {
-      title: 'Shampoos',
-      description: 'Hair care solutions for healthy and shiny hair',
-      link: '/products'
-    },
-    {
-      title: 'Baby Care',
-      description: 'Gentle products for your little ones',
-      link: '/products'
-    },
-    {
-      title: 'Pet Care',
-      description: 'Safe and effective products for your pets',
-      link: '/products'
-    }
+    { title: 'Soaps', description: 'Natural and medicated soaps', link: '/soaps' },
+    { title: 'Shampoos', description: 'Hair care solutions', link: '/products' },
+    { title: 'Baby Care', description: 'Gentle products for babies', link: '/products' },
+    { title: 'Pet Care', description: 'Safe pet products', link: '/products' }
   ]
 
   return (
     <div className="home">
+
+      {/* ---------------- CAROUSEL SECTION ---------------- */}
+      <div className="carousel-container">
+        <div
+          className="carousel-slides"
+          style={{ transform: `translateX(-${current * 100}%)` }}
+        >
+          {slides.map((slide) => (
+            <img key={slide.id} src={slide.img} alt="banner" />
+          ))}
+        </div>
+
+        <button className="carousel-btn left" onClick={prevSlide}>❮</button>
+        <button className="carousel-btn right" onClick={nextSlide}>❯</button>
+
+        <div className="carousel-dots">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              className={current === index ? "active" : ""}
+              onClick={() => setCurrent(index)}
+            />
+          ))}
+        </div>
+      </div>
+      {/* -------------------------------------------------- */}
+
       <section className="hero">
         <div className="hero-content">
           <h1>Welcome to JSM Cosmetics</h1>
@@ -94,6 +131,7 @@ function Home() {
           <p>Find our products on Amazon, Flipkart, Meesho, and Snapdeal</p>
         </div>
       </section>
+
     </div>
   )
 }
