@@ -6,9 +6,9 @@ function Home() {
 
   // ----------------- CAROUSEL CODE FIXED -----------------
   const slides = [
-    { id: 1, img: "https://picsum.photos/1200/500?random=1" },
-    { id: 2, img: "https://picsum.photos/1200/500?random=2" },
-    { id: 3, img: "https://picsum.photos/1200/500?random=3" },
+    { id: 1, img: "/public/croasul p2.jpg" },
+    { id: 2, img: "/public/croasul p3.jpg" },
+    { id: 3, img: "/public/croasul p1.jpg" },
   ];
 
   const [current, setCurrent] = useState(0);
